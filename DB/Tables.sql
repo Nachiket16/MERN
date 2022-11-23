@@ -1,0 +1,18 @@
+CREATE DATABSE Mobigic;
+
+USE Mobigic;
+
+CREATE TABLE user (
+id INT PRIMARY KEY AUTO_INCREMENT,
+firstNmae VARCHAR(30),
+lastName VARCHAR(30),
+email VARCHAR(50),
+passward VARCHAR(100));
+
+CREATE TABLE User (
+User_id INT PRIMARY KEY AUTO_INCREMENT,
+First_name VARCHAR(30),
+Last_name VARCHAR(30),
+Phone_no DECIMAL(10),
+Email VARCHAR(50),
+Password VARCHAR(100));
