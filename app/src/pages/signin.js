@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import config from '../config'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { signinRedux } from '../slices/authSlice'
 
@@ -31,7 +31,7 @@ const Signin = () => {
             alert('invalid email or password')
           } else {
             const user = result['data']
-            dispatch(signinRedux(user))
+            // dispatch(signinRedux(user))
             alert('******** welcome to Mobigic TEST *******')
             navigate('/home')
           }

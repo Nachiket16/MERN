@@ -1,17 +1,14 @@
-const mysql = require('mysql')
+const mysql = require("mysql")
 
-function connect() {
-  const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'manager',
-    database: 'mobigic',
-    port: 3306,
-  })
+const pool = mysql.createPool({
+  connectionLimit: 20,
+  host: "localhost",
+  user: "root",
+  password: "manager",
+  database: "mobigic",
+  port: 3306,
+})
 
-  connection.connect()
-
-  return connection
+module.exports = {
+  pool,
 }
-
-module.exports = { connect: connect }
