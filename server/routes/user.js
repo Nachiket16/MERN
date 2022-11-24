@@ -45,10 +45,7 @@ router.post('/signin', (request, response) => {
         const user = users[0]
         result['status'] = 'success'
 
-        const token = jwt.sign(
-          { User_id: user['User_id']},
-          config.secret
-        )
+        const token = jwt.sign({ User_id: user['User_id'] }, config.secret)
         result['data'] = {
           First_name: user['First_name'],
           Last_name: user['Last_name'],

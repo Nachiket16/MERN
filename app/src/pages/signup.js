@@ -33,12 +33,15 @@ const Signup = () => {
                 Password,
             })
             .then((response) => {
-                const result = response.data
-                if (result['status'] === 'error') {
+              const result = response.data
+              if (result['status'] === 'error') {
                 alert('invalid Email or Password')
-                } else {
+              } else {
+                alert(
+                  'Dear ' + First_name + ', your account is created successfully'
+                )
                 navigate('/signin')
-                }
+              }
             })
         }
     }

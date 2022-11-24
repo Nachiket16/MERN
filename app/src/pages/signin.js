@@ -6,8 +6,8 @@ import { useDispatch } from 'react-redux'
 import { signinRedux } from '../slices/authSlice'
 
 const Signin = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [Email, setEmail] = useState('')
+  const [Password, setPassword] = useState('')
 
   const dispatch = useDispatch()
 
@@ -15,24 +15,25 @@ const Signin = () => {
 
   const signin = () => {
     // check if user has really entered any value
-    if (email.length === 0) {
+    if (Email.length === 0) {
       alert('please enter email')
-    } else if (password.length === 0) {
+    } else if (Password.length === 0) {
       alert('please enter password')
     } else {
       axios
         .post(config.serverURL + '/signin', {
-          email,
-          password,
+          Email,
+          Password,
         })
         .then((response) => {
           const result = response.data
+          // console.log(result['staus'])
           if (result['status'] === 'error') {
-            alert('invalid email or password')
+            alert(result['error'])
           } else {
             const user = result['data']
-            // dispatch(signinRedux(user))
-            alert('******** welcome to Mobigic TEST *******')
+            dispatch(signinRedux(user))
+            alert('Hello ' + user['First_name'] + ', welcome to Bus-hub')
             navigate('/home')
           }
         })
@@ -78,7 +79,10 @@ const Signin = () => {
         <i class="fas fa-sign-in-alt"></i> Sign-In
         </button>
       </div>
-      <a href='/signup'>Don't have an account. SIGN UP</a>
+      <br />
+      <Link to='/signup' style={{ textAlign: 'center' }}>
+          Don't have an account. SIGN UP
+        </Link>
     </div>
   )
 }
