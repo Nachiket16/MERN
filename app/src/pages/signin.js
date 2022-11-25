@@ -33,7 +33,7 @@ const Signin = () => {
           } else {
             const user = result['data']
             dispatch(signinRedux(user))
-            alert('Hello ' + user['First_name'] + ', welcome to Bus-hub')
+            alert('Hello ' + user['First_name'] + ', welcome to Mobigic')
             navigate('/file')
           }
         })
