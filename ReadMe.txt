@@ -29,3 +29,13 @@ cmd: npm start
 ->yarn add mysql express crypto-js cors jsonwebtoken
 
 cmd: nodemon server.
+
+
+
+It was fun assignment, I was unable to use multer library. 
+I used mysql as a database which made file storing little difficult 
+we needed No SQL, mongodb or mongoose would be great but currently with the give time 
+and my schedule i was unable to learn in few hours. 
+
+It's very simple app but your feedback is appreciated so I can improve in those area.
+also if possible do tell me the proper approch or library which I should Have Used.
